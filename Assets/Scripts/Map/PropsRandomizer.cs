@@ -27,13 +27,12 @@ public class PropRandomizer : MonoBehaviour
                 int randPrefab = Random.Range(0, propPrefabs.Count);
                 GameObject prefabToSpawn = propPrefabs[randPrefab];
 
-                // Manter o Z do ponto de referência
                 float fixedZ = referencePoint.position.z;
 
                 Vector3 randomOffset = new Vector3(
                     Random.Range(-maxRandomOffset, maxRandomOffset),
                     randomizeY ? Random.Range(minYOffset, maxYOffset) : 0,
-                    0 // Z sempre 0 para manter o Z do referencePoint
+                    0
                 );
 
                 Vector3 spawnPosition = new Vector3(
@@ -42,7 +41,8 @@ public class PropRandomizer : MonoBehaviour
                     fixedZ
                 );
 
-                Instantiate(prefabToSpawn, spawnPosition, Quaternion.identity);
+                GameObject spawnedProp = Instantiate(prefabToSpawn, spawnPosition, Quaternion.identity);
+                spawnedProp.transform.SetParent(transform); // <- ADICIONE ESTA LINHA
             }
         }
     }
