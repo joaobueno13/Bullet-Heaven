@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1896eb1c2eeeb6340bcea2e3e3652714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectileBehaviour
+  weaponData: {fileID: 11400000, guid: 3058dcb93ffa6034ba87d9849290bf69, type: 2}
   destroyAfterSeconds: 3
 --- !u!212 &2447540007024141889
 SpriteRenderer:

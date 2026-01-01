@@ -3,13 +3,9 @@ using UnityEngine;
 public class WeaponController : MonoBehaviour
 {
     [Header("Weapon Stats")]
-    public GameObject prefab;
-    public float damage;
-    public float speed;
-    public float cooldownDuration;
-    public int piece;
-
+    public WeaponsScriptableObject weaponData;
     protected float currentCooldown;
+
     protected PlayerMovement pm;
 
     protected virtual void Start()
@@ -21,12 +17,14 @@ public class WeaponController : MonoBehaviour
             Debug.LogError($"WeaponController em {gameObject.name} não encontrou PlayerMovement no pai!");
         }
 
-        currentCooldown = cooldownDuration;
+        // Inicializa em 0 para permitir o primeiro ataque imediatamente
+        currentCooldown = 0f;
     }
 
     protected virtual void Update()
     {
         currentCooldown -= Time.deltaTime;
+
         if (currentCooldown <= 0f)
         {
             Attack();
@@ -35,6 +33,7 @@ public class WeaponController : MonoBehaviour
 
     protected virtual void Attack()
     {
-        currentCooldown = cooldownDuration;
+        // Reseta o cooldown após atacar
+        currentCooldown = weaponData.CooldownDuration;
     }
 }

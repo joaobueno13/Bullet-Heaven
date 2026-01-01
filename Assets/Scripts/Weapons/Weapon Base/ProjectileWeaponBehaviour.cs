@@ -3,6 +3,8 @@ using UnityEngine.Rendering;
 
 public class ProjectileWeaponBehaviour : MonoBehaviour
 {
+
+    public WeaponsScriptableObject weaponData;
     protected Vector3 direction;
     public float destroyAfterSeconds;
 

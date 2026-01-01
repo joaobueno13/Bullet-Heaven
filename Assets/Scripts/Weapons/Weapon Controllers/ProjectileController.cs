@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class ProjectileController : WeaponController
 {
-
-
     protected override void Start()
     {
         base.Start();
@@ -12,8 +10,13 @@ public class ProjectileController : WeaponController
     protected override void Attack()
     {
         base.Attack();
-        GameObject spawnedProjectile = Instantiate(prefab);
+
+        GameObject spawnedProjectile = Instantiate(weaponData.Prefab);
         spawnedProjectile.transform.position = transform.position;
-        spawnedProjectile.GetComponent<ProjectileBehaviour>().DirectionChecker(pm.lastMovedVector);     
+
+        // Passa os dados da arma para o projétil
+        ProjectileBehaviour projectile = spawnedProjectile.GetComponent<ProjectileBehaviour>();
+        projectile.weaponData = weaponData;
+        projectile.DirectionChecker(pm.lastMovedVector);
     }
 }
