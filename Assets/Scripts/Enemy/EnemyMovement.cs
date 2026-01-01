@@ -3,8 +3,8 @@ using UnityEngine.Rendering;
 
 public class EnemyMovement : MonoBehaviour
 {
+    public EnemyScriptableObject enemyData;
     Transform player;
-    public float moveSpeed;
 
     void Start()
     {
@@ -13,6 +13,6 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, enemyData.MoveSpeed * Time.deltaTime);
     }
 }
