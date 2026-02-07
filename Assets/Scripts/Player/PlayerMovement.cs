@@ -4,23 +4,24 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
-    private float moveSpeed = 5f;
-    private Rigidbody2D rb;
     [HideInInspector]
     public Vector2 moveDir;
     [HideInInspector]
     public Vector2 lastMovedVector;
 
+    Rigidbody2D rb;
+    public CharacterScriptableObject characterData;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        lastMovedVector = new Vector2(1, 0f); // Já começa olhando para direita
+        lastMovedVector = new Vector2(1, 0f); // Jï¿½ comeï¿½a olhando para direita
     }
 
     void Update()
-    { 
+    {
         InputManagement();
-        rb.linearVelocity = moveDir * moveSpeed;
+        rb.linearVelocity = moveDir * characterData.MoveSpeed;
     }
 
     public void Move(InputAction.CallbackContext context)

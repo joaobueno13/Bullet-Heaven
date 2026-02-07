@@ -392,6 +392,8 @@ GameObject:
   - component: {fileID: 897824025}
   - component: {fileID: 897824024}
   - component: {fileID: 897824029}
+  - component: {fileID: 897824030}
+  - component: {fileID: 897824031}
   - component: {fileID: 897824023}
   - component: {fileID: 897824026}
   - component: {fileID: 897824028}
@@ -501,9 +503,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8088c1b8e4b08784287be0856ff53ba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveSpeed: 5
   moveDir: {x: 0, y: 0}
   lastMovedVector: {x: 0, y: 0}
+  characterData: {fileID: 11400000, guid: 1fc9ae16c403b964ca55ec8848eb701a, type: 2}
 --- !u!4 &897824025
 Transform:
   m_ObjectHideFlags: 0
@@ -641,6 +643,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dedd18260bba1d14087f3a08dbcef33c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimator
+--- !u!114 &897824030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897824022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16530680926534749ba28f777d853fee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
+  characterData: {fileID: 11400000, guid: 1fc9ae16c403b964ca55ec8848eb701a, type: 2}
+  experience: 0
+  level: 1
+  experienceCap: 100
+  invencibilityDuration: 0.5
+  levelRanges:
+  - startLevel: 1
+    endLevel: 3
+    experienceCapIncrease: 100
+  - startLevel: 4
+    endLevel: 5
+    experienceCapIncrease: 200
+--- !u!114 &897824031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897824022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49c78dbe3ab74d64f9dccf5df2283c5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCollector
 --- !u!1 &1849763696
 GameObject:
   m_ObjectHideFlags: 0

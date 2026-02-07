@@ -13,9 +13,11 @@ GameObject:
   - component: {fileID: 8849504937871690005}
   - component: {fileID: 1159189660947429648}
   - component: {fileID: 23775936879882510}
+  - component: {fileID: 1127848041597940992}
+  - component: {fileID: -6857578606623902994}
   m_Layer: 0
   m_Name: Flying Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175,3 +177,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   enemyData: {fileID: 11400000, guid: ba55e5f6353d3fc42ac2795461e086c1, type: 2}
+--- !u!114 &1127848041597940992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4580519134964340620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a658d38a45fcd7e418317e8a692dd486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
+  enemyData: {fileID: 11400000, guid: ba55e5f6353d3fc42ac2795461e086c1, type: 2}
+--- !u!114 &-6857578606623902994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4580519134964340620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef558bd8cd290c44a95276ab72d1c6cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DropRateManager
+  drops:
+  - name: Xp
+    itemPrefab: {fileID: 6141962976727671571, guid: 4ee5aacb8284a9c4884a93e000caf767, type: 3}
+    dropRate: 100

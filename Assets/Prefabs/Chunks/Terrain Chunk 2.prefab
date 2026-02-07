@@ -4198,7 +4198,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PropsRandomizer
   propPrefabs:
-  - {fileID: 818025039389423879, guid: b7d32c9f5c125fd49b49b86e97a6da95, type: 3}
   - {fileID: 7839849448510812077, guid: 5067c520d9eafec438d06b2e5f7b2608, type: 3}
   - {fileID: 8395356595430308492, guid: cce3c644caa24154d96267c426c7d5de, type: 3}
   spawnPointReferences:
@@ -4213,6 +4212,11 @@ MonoBehaviour:
   randomizeY: 1
   minYOffset: -1
   maxYOffset: 1
+  breakablePropPrefabs:
+  - {fileID: 411862759854214717, guid: 1e1f64e93861e0743a99b4b3074812da, type: 3}
+  breakableSpawnChance: 0.1
+  breakableMinSpacing: 2
+  breakableMaxPlacementAttempts: 5
 --- !u!1 &1319046835138967282
 GameObject:
   m_ObjectHideFlags: 0
